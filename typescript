@@ -1,0 +1,680 @@
+Script started on Mon Aug 11 21:28:13 2014
+[?1034h~/clients/.../companion-backend[master]$ ls
+companion		contributors.txt	typescript
+~/clients/.../companion-backend[master]$ cd companion/
+~/clients/.../companion-backend/companion[master]$ cd companion/ls[Kgit pushmerge cell_settings[4Pcheckout master[5@merge -s ours[C[C[C[C[C[C[Cstatus[Kls[Kcd Mx-ieClient/ls[Kcp -r Mx-ieClient ~/Desktop/[3P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls[Kmmm[K[K[K[29P(reverse-i-search)`':[Cr': git push origin/dev[8Pa': git branch[2Pi': rails c[1@l[C[C[C[1@s[C[C[C[1@ [C[C[C[C[C[C[C[C[Cs[1P[C[C[C[1P[C[C[C[1P[C[C[C[1P[C[C[C[1P[C[C[C[1P[C[C[C[29@~/clients/.../companion-backend/companion[master]$[C[C[C[C[C[C[C[C[Kg model
+/Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/sqlite3-1.3.9/lib/sqlite3/sqlite3_native.bundle: [BUG] Segmentation fault at 0x00000000000418
+ruby 2.1.1p76 (2014-02-24 revision 45161) [x86_64-darwin12.0]
+
+-- Crash Report log information --------------------------------------------
+   See Crash Report log file under the one of following:
+     * ~/Library/Logs/CrashReporter
+     * /Library/Logs/CrashReporter
+     * ~/Library/Logs/DiagnosticReports
+     * /Library/Logs/DiagnosticReports
+   for more details.
+
+-- Control frame information -----------------------------------------------
+c:0023 p:-546446390 s:0091 e:000090 TOP    [FINISH]
+c:0022 p:---- s:0089 e:000088 CFUNC  :require
+c:0021 p:0020 s:0085 e:000084 BLOCK  /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/sqlite3-1.3.9/lib/sqlite3.rb:6
+c:0020 p:0032 s:0082 e:000081 TOP    /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/sqlite3-1.3.9/lib/sqlite3.rb:2 [FINISH]
+c:0019 p:---- s:0080 e:000079 CFUNC  :require
+c:0018 p:0037 s:0076 e:000075 BLOCK  /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/bundler-1.6.1/lib/bundler/runtime.rb:76 [FINISH]
+c:0017 p:---- s:0073 e:000072 CFUNC  :each
+c:0016 p:0055 s:0070 e:000069 BLOCK  /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/bundler-1.6.1/lib/bundler/runtime.rb:72 [FINISH]
+c:0015 p:---- s:0063 e:000062 CFUNC  :each
+c:0014 p:0030 s:0060 e:000059 METHOD /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/bundler-1.6.1/lib/bundler/runtime.rb:61
+c:0013 p:0013 s:0056 e:000055 METHOD /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/bundler-1.6.1/lib/bundler.rb:132
+c:0012 p:0047 s:0052 e:000051 TOP    /Users/brandontrebitowski/clients/gadole/companion-backend/companion/config/application.rb:7 [FINISH]
+c:0011 p:---- s:0050 e:000049 CFUNC  :require
+c:0010 p:0046 s:0046 e:000045 METHOD /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/spring-1.1.3/lib/spring/application.rb:82
+c:0009 p:0080 s:0042 e:000041 METHOD /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/spring-1.1.3/lib/spring/application.rb:140
+c:0008 p:0065 s:0029 e:000028 BLOCK  /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/spring-1.1.3/lib/spring/application.rb:128 [FINISH]
+c:0007 p:---- s:0027 e:000026 CFUNC  :loop
+c:0006 p:0023 s:0024 e:000023 METHOD /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/spring-1.1.3/lib/spring/application.rb:122
+c:0005 p:0128 s:0021 E:0016e0 TOP    /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/spring-1.1.3/lib/spring/application/boot.rb:18 [FINISH]
+c:0004 p:---- s:0018 e:000017 CFUNC  :require
+c:0003 p:0115 s:0014 e:000013 METHOD /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55
+c:0002 p:0007 s:0004 E:000b18 EVAL   -e:1 [FINISH]
+c:0001 p:0000 s:0002 E:0000c8 TOP    [FINISH]
+
+-e:1:in `<main>'
+/Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+/Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+/Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/spring-1.1.3/lib/spring/application/boot.rb:18:in `<top (required)>'
+/Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/spring-1.1.3/lib/spring/application.rb:122:in `run'
+/Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/spring-1.1.3/lib/spring/application.rb:122:in `loop'
+/Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/spring-1.1.3/lib/spring/application.rb:128:in `block in run'
+/Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/spring-1.1.3/lib/spring/application.rb:140:in `serve'
+/Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/spring-1.1.3/lib/spring/application.rb:82:in `preload'
+/Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/spring-1.1.3/lib/spring/application.rb:82:in `require'
+/Users/brandontrebitowski/clients/gadole/companion-backend/companion/config/application.rb:7:in `<top (required)>'
+/Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/bundler-1.6.1/lib/bundler.rb:132:in `require'
+/Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/bundler-1.6.1/lib/bundler/runtime.rb:61:in `require'
+/Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/bundler-1.6.1/lib/bundler/runtime.rb:61:in `each'
+/Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/bundler-1.6.1/lib/bundler/runtime.rb:72:in `block in require'
+/Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/bundler-1.6.1/lib/bundler/runtime.rb:72:in `each'
+/Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/bundler-1.6.1/lib/bundler/runtime.rb:76:in `block (2 levels) in require'
+/Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/bundler-1.6.1/lib/bundler/runtime.rb:76:in `require'
+/Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/sqlite3-1.3.9/lib/sqlite3.rb:2:in `<top (required)>'
+/Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/sqlite3-1.3.9/lib/sqlite3.rb:6:in `rescue in <top (required)>'
+/Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/sqlite3-1.3.9/lib/sqlite3.rb:6:in `require'
+
+-- C level backtrace information -------------------------------------------
+0   ruby                                0x00000001002e969d rb_vm_bugreport + 141
+1   ruby                                0x00000001001b494d report_bug + 285
+2   ruby                                0x00000001001b4823 rb_bug + 179
+3   ruby                                0x00000001002730a9 sigsegv + 153
+4   libsystem_platform.dylib            0x00007fff8fedc5aa _sigtramp + 26
+5   libruby.2.0.0.dylib                 0x0000000104a3e568 ruby_xmalloc + 17
+6   ???                                 0x00007fff5fbfbc20 0x0 + 140734799789088
+
+-- Other runtime information -----------------------------------------------
+
+* Loaded script: spring app    | companion | started 0 secs ago | development mode
+
+* Loaded features:
+
+    0 enumerator.so
+    1 enc/encdb.so
+    2 enc/trans/transdb.so
+    3 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/x86_64-darwin12.0/rbconfig.rb
+    4 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/rubygems/compatibility.rb
+    5 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/rubygems/defaults.rb
+    6 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/rubygems/deprecate.rb
+    7 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/rubygems/errors.rb
+    8 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/rubygems/version.rb
+    9 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/rubygems/requirement.rb
+   10 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/rubygems/platform.rb
+   11 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/rubygems/basic_specification.rb
+   12 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/rubygems/stub_specification.rb
+   13 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/rubygems/util/stringio.rb
+   14 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/rubygems/specification.rb
+   15 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/rubygems/exceptions.rb
+   16 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/rubygems/core_ext/kernel_gem.rb
+   17 thread.rb
+   18 thread.so
+   19 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/monitor.rb
+   20 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/rubygems/core_ext/kernel_require.rb
+   21 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/rubygems.rb
+   22 socket.so
+   23 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/socket.rb
+   24 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/spring-1.1.3/lib/spring/errors.rb
+   25 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/spring-1.1.3/lib/spring/configuration.rb
+   26 pathname.so
+   27 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/pathname.rb
+   28 etc.so
+   29 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/fileutils.rb
+   30 digest.so
+   31 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/digest.rb
+   32 digest/md5.so
+   33 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/tmpdir.rb
+   34 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/spring-1.1.3/lib/spring/version.rb
+   35 fiddle.so
+   36 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/fiddle/function.rb
+   37 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/fiddle/closure.rb
+   38 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/fiddle.rb
+   39 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/spring-1.1.3/lib/spring/sid.rb
+   40 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/spring-1.1.3/lib/spring/env.rb
+   41 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/spring-1.1.3/lib/spring/process_title_updater.rb
+   42 stringio.so
+   43 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/spring-1.1.3/lib/spring/json.rb
+   44 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/set.rb
+   45 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/mutex_m.rb
+   46 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/spring-1.1.3/lib/spring/watcher/abstract.rb
+   47 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/spring-1.1.3/lib/spring/watcher/polling.rb
+   48 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/spring-1.1.3/lib/spring/watcher.rb
+   49 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/spring-1.1.3/lib/spring/boot.rb
+   50 pty.so
+   51 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/spring-1.1.3/lib/spring/application.rb
+   52 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/spring-1.1.3/lib/spring/command_wrapper.rb
+   53 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/spring-1.1.3/lib/spring/commands/rails.rb
+   54 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/spring-1.1.3/lib/spring/commands/rake.rb
+   55 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/bundler-1.6.1/lib/bundler/constants.rb
+   56 io/console.so
+   57 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/rubygems/user_interaction.rb
+   58 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/rubygems/config_file.rb
+   59 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/bundler-1.6.1/lib/bundler/rubygems_integration.rb
+   60 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/bundler-1.6.1/lib/bundler/current_ruby.rb
+   61 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/rubygems/dependency.rb
+   62 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/bundler-1.6.1/lib/bundler/shared_helpers.rb
+   63 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/bundler-1.6.1/lib/bundler/gem_path_manipulation.rb
+   64 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/bundler-1.6.1/lib/bundler/gem_helpers.rb
+   65 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/bundler-1.6.1/lib/bundler/match_platform.rb
+   66 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/bundler-1.6.1/lib/bundler/rubygems_ext.rb
+   67 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/bundler-1.6.1/lib/bundler/version.rb
+   68 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/bundler-1.6.1/lib/bundler.rb
+   69 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/bundler-1.6.1/lib/bundler/settings.rb
+   70 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/rubygems/path_support.rb
+   71 digest/sha1.so
+   72 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/bundler-1.6.1/lib/bundler/definition.rb
+   73 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/bundler-1.6.1/lib/bundler/dependency.rb
+   74 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/bundler-1.6.1/lib/bundler/ruby_dsl.rb
+   75 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/bundler-1.6.1/lib/bundler/dsl.rb
+   76 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/bundler-1.6.1/lib/bundler/source.rb
+   77 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/uri/common.rb
+   78 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/uri/generic.rb
+   79 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/uri/ftp.rb
+   80 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/uri/http.rb
+   81 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/uri/https.rb
+   82 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/uri/ldap.rb
+   83 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/uri/ldaps.rb
+   84 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/uri/mailto.rb
+   85 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/uri.rb
+   86 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/timeout.rb
+   87 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/net/protocol.rb
+   88 zlib.so
+   89 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/net/http/exceptions.rb
+   90 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/net/http/header.rb
+   91 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/net/http/generic_request.rb
+   92 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/net/http/request.rb
+   93 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/net/http/requests.rb
+   94 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/net/http/response.rb
+   95 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/net/http/responses.rb
+   96 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/net/http/proxy_delta.rb
+   97 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/net/http/backward.rb
+   98 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/net/http.rb
+   99 date_core.so
+  100 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/date/format.rb
+  101 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/date.rb
+  102 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/time.rb
+  103 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/rubygems/request.rb
+  104 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/cgi/core.rb
+  105 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/cgi/util.rb
+  106 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/cgi/cookie.rb
+  107 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/cgi.rb
+  108 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/rubygems/uri_formatter.rb
+  109 fcntl.so
+  110 openssl.so
+  111 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/openssl/bn.rb
+  112 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/openssl/cipher.rb
+  113 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/openssl/config.rb
+  114 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/openssl/digest.rb
+  115 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/openssl/x509.rb
+  116 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/openssl/buffering.rb
+  117 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/openssl/ssl.rb
+  118 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/openssl.rb
+  119 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/securerandom.rb
+  120 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/resolv.rb
+  121 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/rubygems/remote_fetcher.rb
+  122 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/rubygems/text.rb
+  123 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/rubygems/name_tuple.rb
+  124 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/rubygems/spec_fetcher.rb
+  125 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/bundler-1.6.1/lib/bundler/source/rubygems.rb
+  126 strscan.so
+  127 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/bundler-1.6.1/lib/bundler/source/path.rb
+  128 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/bundler-1.6.1/lib/bundler/source/git.rb
+  129 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/bundler-1.6.1/lib/bundler/lockfile_parser.rb
+  130 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/bundler-1.6.1/lib/bundler/lazy_specification.rb
+  131 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/tsort.rb
+  132 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/forwardable.rb
+  133 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/bundler-1.6.1/lib/bundler/spec_set.rb
+  134 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/bundler-1.6.1/lib/bundler/environment.rb
+  135 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/bundler-1.6.1/lib/bundler/runtime.rb
+  136 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/bundler-1.6.1/lib/bundler/index.rb
+  137 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/bundler-1.6.1/lib/bundler/remote_specification.rb
+  138 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/bundler-1.6.1/lib/bundler/endpoint_specification.rb
+  139 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/bundler-1.6.1/lib/bundler/dep_proxy.rb
+  140 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/bundler-1.6.1/lib/bundler/setup.rb
+  141 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/spring-1.1.3/lib/spring/commands.rb
+  142 /Users/brandontrebitowski/clients/gadole/companion-backend/companion/config/boot.rb
+  143 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/railties-4.1.4/lib/rails/ruby_version_check.rb
+  144 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/thread_safe-0.3.4/lib/thread_safe/version.rb
+  145 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/delegate.rb
+  146 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/thread_safe-0.3.4/lib/thread_safe/synchronized_delegator.rb
+  147 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/thread_safe-0.3.4/lib/thread_safe.rb
+  148 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/array/prepend_and_append.rb
+  149 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/hash/deep_merge.rb
+  150 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/hash/except.rb
+  151 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/hash/slice.rb
+  152 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/i18n-0.6.11/lib/i18n/version.rb
+  153 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/i18n-0.6.11/lib/i18n/exceptions.rb
+  154 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/i18n-0.6.11/lib/i18n/interpolate/ruby.rb
+  155 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/i18n-0.6.11/lib/i18n.rb
+  156 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/lazy_load_hooks.rb
+  157 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/i18n-0.6.11/lib/i18n/config.rb
+  158 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/i18n.rb
+  159 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/thread_safe-0.3.4/lib/thread_safe/non_concurrent_cache_backend.rb
+  160 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/thread_safe-0.3.4/lib/thread_safe/mri_cache_backend.rb
+  161 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/thread_safe-0.3.4/lib/thread_safe/cache.rb
+  162 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/inflector/inflections.rb
+  163 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/inflections.rb
+  164 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/inflector/methods.rb
+  165 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/dependencies/autoload.rb
+  166 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/gems/2.1.0/gems/activesupport-4.1.4/lib/active_support/gem_version.rb
+  167 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/version.rb
+  168 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/array/extract_options.rb
+  169 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/module/attribute_accessors.rb
+  170 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/concern.rb
+  171 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/logger_silence.rb
+  172 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/logger.rb
+  173 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/logger.rb
+  174 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support.rb
+  175 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/tempfile.rb
+  176 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/kernel/reporting.rb
+  177 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/module/delegation.rb
+  178 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/hash/keys.rb
+  179 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/object/blank.rb
+  180 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/key_generator.rb
+  181 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/base64.rb
+  182 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/message_verifier.rb
+  183 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/railties-4.1.4/lib/rails/initializable.rb
+  184 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/ordered_options.rb
+  185 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/object/acts_like.rb
+  186 bigdecimal.so
+  187 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/object/duplicable.rb
+  188 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/object/deep_dup.rb
+  189 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/object/try.rb
+  190 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/object/inclusion.rb
+  191 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/object/to_param.rb
+  192 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/object/to_query.rb
+  193 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/multibyte.rb
+  194 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/string/multibyte.rb
+  195 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/inflector/transliterate.rb
+  196 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/string/inflections.rb
+  197 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/date_time/calculations.rb
+  198 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/xml_mini/rexml.rb
+  199 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/xml_mini.rb
+  200 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/array/conversions.rb
+  201 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/time/acts_like.rb
+  202 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/proxy_object.rb
+  203 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/duration.rb
+  204 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tzinfo-1.2.2/lib/tzinfo/ruby_core_support.rb
+  205 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tzinfo-1.2.2/lib/tzinfo/offset_rationals.rb
+  206 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tzinfo-1.2.2/lib/tzinfo/time_or_datetime.rb
+  207 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tzinfo-1.2.2/lib/tzinfo/timezone_definition.rb
+  208 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tzinfo-1.2.2/lib/tzinfo/timezone_offset.rb
+  209 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tzinfo-1.2.2/lib/tzinfo/timezone_transition.rb
+  210 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tzinfo-1.2.2/lib/tzinfo/timezone_transition_definition.rb
+  211 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tzinfo-1.2.2/lib/tzinfo/timezone_index_definition.rb
+  212 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tzinfo-1.2.2/lib/tzinfo/timezone_info.rb
+  213 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tzinfo-1.2.2/lib/tzinfo/data_timezone_info.rb
+  214 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tzinfo-1.2.2/lib/tzinfo/linked_timezone_info.rb
+  215 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tzinfo-1.2.2/lib/tzinfo/transition_data_timezone_info.rb
+  216 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tzinfo-1.2.2/lib/tzinfo/zoneinfo_timezone_info.rb
+  217 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tzinfo-1.2.2/lib/tzinfo/data_source.rb
+  218 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tzinfo-1.2.2/lib/tzinfo/ruby_data_source.rb
+  219 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tzinfo-1.2.2/lib/tzinfo/zoneinfo_data_source.rb
+  220 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tzinfo-1.2.2/lib/tzinfo/timezone_period.rb
+  221 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tzinfo-1.2.2/lib/tzinfo/timezone.rb
+  222 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tzinfo-1.2.2/lib/tzinfo/info_timezone.rb
+  223 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tzinfo-1.2.2/lib/tzinfo/data_timezone.rb
+  224 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tzinfo-1.2.2/lib/tzinfo/linked_timezone.rb
+  225 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tzinfo-1.2.2/lib/tzinfo/timezone_proxy.rb
+  226 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tzinfo-1.2.2/lib/tzinfo/country_index_definition.rb
+  227 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tzinfo-1.2.2/lib/tzinfo/country_info.rb
+  228 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tzinfo-1.2.2/lib/tzinfo/ruby_country_info.rb
+  229 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tzinfo-1.2.2/lib/tzinfo/zoneinfo_country_info.rb
+  230 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tzinfo-1.2.2/lib/tzinfo/country.rb
+  231 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tzinfo-1.2.2/lib/tzinfo/country_timezone.rb
+  232 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tzinfo-1.2.2/lib/tzinfo.rb
+  233 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/values/time_zone.rb
+  234 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/time/conversions.rb
+  235 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/time_with_zone.rb
+  236 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/date_and_time/zones.rb
+  237 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/time/zones.rb
+  238 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/date_and_time/calculations.rb
+  239 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/time/calculations.rb
+  240 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/time/marshal.rb
+  241 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/time.rb
+  242 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/date/acts_like.rb
+  243 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/date/zones.rb
+  244 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/date/calculations.rb
+  245 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/module/remove_method.rb
+  246 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/date/conversions.rb
+  247 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/date.rb
+  248 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/date_time/acts_like.rb
+  249 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/date_time/conversions.rb
+  250 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/date_time/zones.rb
+  251 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/date_time.rb
+  252 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/numeric/time.rb
+  253 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/integer/time.rb
+  254 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/string/conversions.rb
+  255 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/string/zones.rb
+  256 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/time.rb
+  257 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/array/wrap.rb
+  258 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/hash/reverse_merge.rb
+  259 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/hash/conversions.rb
+  260 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/object/conversions.rb
+  261 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/object/instance_variables.rb
+  262 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/json/version.rb
+  263 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/ostruct.rb
+  264 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/json/generic_object.rb
+  265 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/json/common.rb
+  266 enc/utf_16be.so
+  267 enc/utf_16le.so
+  268 enc/utf_32be.so
+  269 enc/utf_32le.so
+  270 json/ext/parser.so
+  271 json/ext/generator.so
+  272 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/json/ext.rb
+  273 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/json.rb
+  274 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/bigdecimal/util.rb
+  275 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/big_decimal/conversions.rb
+  276 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/module/aliasing.rb
+  277 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/object/json.rb
+  278 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/option_merger.rb
+  279 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/object/with_options.rb
+  280 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/object.rb
+  281 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/railties-4.1.4/lib/rails/paths.rb
+  282 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/railties-4.1.4/lib/rails/rack.rb
+  283 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/railties-4.1.4/lib/rails/configuration.rb
+  284 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/inflector.rb
+  285 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/module/introspection.rb
+  286 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/railties-4.1.4/lib/rails/railtie.rb
+  287 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/railties-4.1.4/lib/rails/engine/railties.rb
+  288 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/railties-4.1.4/lib/rails/engine.rb
+  289 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/railties-4.1.4/lib/rails/application.rb
+  290 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/gems/2.1.0/gems/railties-4.1.4/lib/rails/gem_version.rb
+  291 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/railties-4.1.4/lib/rails/version.rb
+  292 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/file_update_checker.rb
+  293 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/railties-4.1.4/lib/rails/railtie/configuration.rb
+  294 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/i18n_railtie.rb
+  295 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/railtie.rb
+  296 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/kernel/singleton_class.rb
+  297 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/class/attribute.rb
+  298 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/singleton.rb
+  299 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/deprecation/instance_delegator.rb
+  300 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/notifications/instrumenter.rb
+  301 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/notifications/fanout.rb
+  302 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/per_thread_registry.rb
+  303 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/notifications.rb
+  304 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/deprecation/behaviors.rb
+  305 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/deprecation/reporting.rb
+  306 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/deprecation/method_wrappers.rb
+  307 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/deprecation/proxy_wrappers.rb
+  308 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/module/deprecation.rb
+  309 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/deprecation.rb
+  310 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/rails.rb
+  311 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/gems/2.1.0/gems/actionpack-4.1.4/lib/action_pack/gem_version.rb
+  312 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.4/lib/action_pack/version.rb
+  313 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.4/lib/action_pack.rb
+  314 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/rack-1.5.2/lib/rack/multipart.rb
+  315 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/rack-1.5.2/lib/rack/utils.rb
+  316 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/rack-1.5.2/lib/rack.rb
+  317 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.4/lib/action_dispatch.rb
+  318 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.4/lib/action_dispatch/railtie.rb
+  319 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/railties-4.1.4/lib/rails.rb
+  320 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/gems/2.1.0/gems/activemodel-4.1.4/lib/active_model/gem_version.rb
+  321 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activemodel-4.1.4/lib/active_model/version.rb
+  322 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activemodel-4.1.4/lib/active_model.rb
+  323 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/crud.rb
+  324 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/factory_methods.rb
+  325 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/expressions.rb
+  326 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/predications.rb
+  327 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/window_predications.rb
+  328 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/math.rb
+  329 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/alias_predication.rb
+  330 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/order_predications.rb
+  331 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/table.rb
+  332 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/attributes/attribute.rb
+  333 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/attributes.rb
+  334 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/compatibility/wheres.rb
+  335 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/expression.rb
+  336 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/visitors/visitor.rb
+  337 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/visitors/depth_first.rb
+  338 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/visitors/to_sql.rb
+  339 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/visitors/sqlite.rb
+  340 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/visitors/postgresql.rb
+  341 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/visitors/mysql.rb
+  342 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/visitors/mssql.rb
+  343 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/visitors/oracle.rb
+  344 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/visitors/join_sql.rb
+  345 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/visitors/where_sql.rb
+  346 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/visitors/order_clauses.rb
+  347 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/visitors/dot.rb
+  348 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/visitors/ibm_db.rb
+  349 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/visitors/informix.rb
+  350 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/visitors.rb
+  351 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/tree_manager.rb
+  352 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/insert_manager.rb
+  353 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/select_manager.rb
+  354 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/update_manager.rb
+  355 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/delete_manager.rb
+  356 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/nodes/node.rb
+  357 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/nodes/select_statement.rb
+  358 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/nodes/select_core.rb
+  359 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/nodes/insert_statement.rb
+  360 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/nodes/update_statement.rb
+  361 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/nodes/terminal.rb
+  362 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/nodes/true.rb
+  363 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/nodes/false.rb
+  364 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/nodes/unary.rb
+  365 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/nodes/grouping.rb
+  366 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/nodes/ascending.rb
+  367 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/nodes/descending.rb
+  368 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/nodes/unqualified_column.rb
+  369 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/nodes/with.rb
+  370 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/nodes/binary.rb
+  371 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/nodes/equality.rb
+  372 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/nodes/in.rb
+  373 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/nodes/join_source.rb
+  374 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/nodes/delete_statement.rb
+  375 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/nodes/table_alias.rb
+  376 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/nodes/infix_operation.rb
+  377 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/nodes/over.rb
+  378 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/nodes/and.rb
+  379 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/nodes/function.rb
+  380 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/nodes/count.rb
+  381 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/nodes/extract.rb
+  382 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/nodes/values.rb
+  383 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/nodes/named_function.rb
+  384 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/nodes/window.rb
+  385 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/nodes/inner_join.rb
+  386 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/nodes/outer_join.rb
+  387 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/nodes/string_join.rb
+  388 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/nodes/sql_literal.rb
+  389 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/nodes.rb
+  390 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/deprecated.rb
+  391 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/sql/engine.rb
+  392 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel/sql_literal.rb
+  393 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/arel-5.0.1.20140414130214/lib/arel.rb
+  394 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/gems/2.1.0/gems/activerecord-4.1.4/lib/active_record/gem_version.rb
+  395 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activerecord-4.1.4/lib/active_record/version.rb
+  396 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/enumerable.rb
+  397 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activemodel-4.1.4/lib/active_model/attribute_methods.rb
+  398 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activerecord-4.1.4/lib/active_record/attribute_methods.rb
+  399 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/benchmark.rb
+  400 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/benchmark.rb
+  401 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activerecord-4.1.4/lib/active_record/connection_adapters/schema_cache.rb
+  402 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/ipaddr.rb
+  403 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activerecord-4.1.4/lib/active_record/connection_adapters/abstract/schema_dumper.rb
+  404 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activerecord-4.1.4/lib/active_record/connection_adapters/abstract/schema_creation.rb
+  405 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activerecord-4.1.4/lib/active_record/connection_adapters/abstract/quoting.rb
+  406 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activerecord-4.1.4/lib/active_record/connection_adapters/abstract/database_statements.rb
+  407 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activerecord-4.1.4/lib/active_record/errors.rb
+  408 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activerecord-4.1.4/lib/active_record/migration.rb
+  409 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activerecord-4.1.4/lib/active_record/migration/join_table.rb
+  410 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activerecord-4.1.4/lib/active_record/connection_adapters/abstract/schema_statements.rb
+  411 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activerecord-4.1.4/lib/active_record/connection_adapters/abstract/database_limits.rb
+  412 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activerecord-4.1.4/lib/active_record/connection_adapters/abstract/query_cache.rb
+  413 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/descendants_tracker.rb
+  414 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/callbacks.rb
+  415 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activerecord-4.1.4/lib/active_record/connection_adapters/abstract_adapter.rb
+  416 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activerecord-4.1.4/lib/active_record/scoping.rb
+  417 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activerecord-4.1.4/lib/active_record.rb
+  418 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activemodel-4.1.4/lib/active_model/railtie.rb
+  419 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/module/attr_internal.rb
+  420 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/module/anonymous.rb
+  421 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.4/lib/abstract_controller.rb
+  422 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.4/lib/action_dispatch/http/filter_redirect.rb
+  423 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/rack-1.5.2/lib/rack/request.rb
+  424 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/rack-1.5.2/lib/rack/response.rb
+  425 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.4/lib/action_dispatch/http/cache.rb
+  426 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.4/lib/action_dispatch/http/response.rb
+  427 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/json/decoding.rb
+  428 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/json/encoding.rb
+  429 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/json.rb
+  430 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.4/lib/action_controller/metal/live.rb
+  431 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/hash_with_indifferent_access.rb
+  432 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/hash/indifferent_access.rb
+  433 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/rescuable.rb
+  434 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.4/lib/action_dispatch/http/upload.rb
+  435 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/rack-test-0.6.2/lib/rack/mock_session.rb
+  436 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/rack-test-0.6.2/lib/rack/test/cookie_jar.rb
+  437 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/rack-test-0.6.2/lib/rack/test/mock_digest_request.rb
+  438 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/rack-test-0.6.2/lib/rack/test/utils.rb
+  439 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/rack-test-0.6.2/lib/rack/test/methods.rb
+  440 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/rack-test-0.6.2/lib/rack/test/uploaded_file.rb
+  441 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/rack-test-0.6.2/lib/rack/test.rb
+  442 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.4/lib/action_controller/metal/strong_parameters.rb
+  443 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/load_error.rb
+  444 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/name_error.rb
+  445 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/uri.rb
+  446 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.4/lib/action_controller.rb
+  447 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.4/lib/abstract_controller/railties/routes_helpers.rb
+  448 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.4/lib/action_controller/railties/helpers.rb
+  449 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/gems/2.1.0/gems/actionview-4.1.4/lib/action_view/gem_version.rb
+  450 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionview-4.1.4/lib/action_view/version.rb
+  451 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/erb.rb
+  452 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/string/output_safety.rb
+  453 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionview-4.1.4/lib/action_view.rb
+  454 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionview-4.1.4/lib/action_view/railtie.rb
+  455 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionpack-4.1.4/lib/action_controller/railtie.rb
+  456 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activerecord-4.1.4/lib/active_record/railtie.rb
+  457 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/gems/2.1.0/gems/actionmailer-4.1.4/lib/action_mailer/gem_version.rb
+  458 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionmailer-4.1.4/lib/action_mailer/version.rb
+  459 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/class/delegating_attributes.rb
+  460 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/module/reachable.rb
+  461 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/class/subclasses.rb
+  462 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/class.rb
+  463 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionmailer-4.1.4/lib/action_mailer.rb
+  464 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionmailer-4.1.4/lib/action_mailer/railtie.rb
+  465 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/railties-4.1.4/lib/rails/test_unit/railtie.rb
+  466 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/sprockets-2.11.0/lib/sprockets/version.rb
+  467 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/hike-1.2.3/lib/hike.rb
+  468 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tilt-1.4.1/lib/tilt/template.rb
+  469 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tilt-1.4.1/lib/tilt/string.rb
+  470 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tilt-1.4.1/lib/tilt/erb.rb
+  471 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tilt-1.4.1/lib/tilt/etanni.rb
+  472 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tilt-1.4.1/lib/tilt/haml.rb
+  473 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tilt-1.4.1/lib/tilt/css.rb
+  474 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tilt-1.4.1/lib/tilt/csv.rb
+  475 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tilt-1.4.1/lib/tilt/coffee.rb
+  476 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tilt-1.4.1/lib/tilt/nokogiri.rb
+  477 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tilt-1.4.1/lib/tilt/builder.rb
+  478 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tilt-1.4.1/lib/tilt/markaby.rb
+  479 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tilt-1.4.1/lib/tilt/liquid.rb
+  480 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tilt-1.4.1/lib/tilt/radius.rb
+  481 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tilt-1.4.1/lib/tilt/markdown.rb
+  482 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tilt-1.4.1/lib/tilt/textile.rb
+  483 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tilt-1.4.1/lib/tilt/rdoc.rb
+  484 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tilt-1.4.1/lib/tilt/wiki.rb
+  485 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tilt-1.4.1/lib/tilt/yajl.rb
+  486 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tilt-1.4.1/lib/tilt/asciidoc.rb
+  487 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tilt-1.4.1/lib/tilt/plain.rb
+  488 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/tilt-1.4.1/lib/tilt.rb
+  489 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/sprockets-2.11.0/lib/sprockets/eco_template.rb
+  490 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/sprockets-2.11.0/lib/sprockets/ejs_template.rb
+  491 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/sprockets-2.11.0/lib/sprockets/jst_processor.rb
+  492 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/sprockets-2.11.0/lib/sprockets/utils.rb
+  493 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/sprockets-2.11.0/lib/sprockets/engines.rb
+  494 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/rack-1.5.2/lib/rack/mime.rb
+  495 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/sprockets-2.11.0/lib/sprockets/mime.rb
+  496 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/sprockets-2.11.0/lib/sprockets/processor.rb
+  497 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/sprockets-2.11.0/lib/sprockets/processing.rb
+  498 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/sprockets-2.11.0/lib/sprockets/compressing.rb
+  499 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/sprockets-2.11.0/lib/sprockets/paths.rb
+  500 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/hike-1.2.3/lib/hike/normalized_array.rb
+  501 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/hike-1.2.3/lib/hike/extensions.rb
+  502 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/hike-1.2.3/lib/hike/index.rb
+  503 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/hike-1.2.3/lib/hike/paths.rb
+  504 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/hike-1.2.3/lib/hike/trail.rb
+  505 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/shellwords.rb
+  506 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/psych/exception.rb
+  507 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/psych/syntax_error.rb
+  508 psych.so
+  509 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/psych/omap.rb
+  510 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/psych/set.rb
+  511 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/psych/class_loader.rb
+  512 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/psych/scalar_scanner.rb
+  513 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/psych/nodes/node.rb
+  514 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/psych/nodes/stream.rb
+  515 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/psych/nodes/document.rb
+  516 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/psych/nodes/sequence.rb
+  517 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/psych/nodes/scalar.rb
+  518 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/psych/nodes/mapping.rb
+  519 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/psych/nodes/alias.rb
+  520 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/psych/nodes.rb
+  521 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/psych/streaming.rb
+  522 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/psych/visitors/visitor.rb
+  523 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/psych/visitors/to_ruby.rb
+  524 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/psych/visitors/emitter.rb
+  525 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/psych/handler.rb
+  526 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/psych/tree_builder.rb
+  527 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/psych/visitors/yaml_tree.rb
+  528 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/psych/json/ruby_events.rb
+  529 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/psych/visitors/json_tree.rb
+  530 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/psych/visitors/depth_first.rb
+  531 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/psych/visitors.rb
+  532 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/psych/parser.rb
+  533 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/psych/coder.rb
+  534 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/psych/core_ext.rb
+  535 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/psych/deprecated.rb
+  536 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/psych/stream.rb
+  537 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/psych/json/yaml_events.rb
+  538 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/psych/json/tree_builder.rb
+  539 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/psych/json/stream.rb
+  540 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/psych/handlers/document_stream.rb
+  541 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/psych.rb
+  542 /Users/brandontrebitowski/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/yaml.rb
+  543 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/sprockets-2.11.0/lib/sprockets/directive_processor.rb
+  544 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/sprockets-2.11.0/lib/sprockets/safety_colons.rb
+  545 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/sprockets-2.11.0/lib/sprockets/charset_normalizer.rb
+  546 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/sprockets-2.11.0/lib/sprockets/sass_compressor.rb
+  547 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/sprockets-2.11.0/lib/sprockets/yui_compressor.rb
+  548 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/sprockets-2.11.0/lib/sprockets/closure_compressor.rb
+  549 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/sprockets-2.11.0/lib/sprockets/uglifier_compressor.rb
+  550 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/sprockets-2.11.0/lib/sprockets/sass_template.rb
+  551 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/sprockets-2.11.0/lib/sprockets/scss_template.rb
+  552 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1/gems/sprockets-2.11.0/lib/sprockets.rb
+  553 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/benchmarkable.rb
+  554 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionview-4.1.4/lib/action_view/helpers/active_model_helper.rb
+  555 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionview-4.1.4/lib/action_view/helpers/asset_url_helper.rb
+  556 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionview-4.1.4/lib/action_view/helpers/capture_helper.rb
+  557 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionview-4.1.4/lib/action_view/helpers/tag_helper.rb
+  558 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionview-4.1.4/lib/action_view/helpers/asset_tag_helper.rb
+  559 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionview-4.1.4/lib/action_view/helpers/atom_feed_helper.rb
+  560 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionview-4.1.4/lib/action_view/helpers/cache_helper.rb
+  561 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionview-4.1.4/lib/action_view/helpers/controller_helper.rb
+  562 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionview-4.1.4/lib/action_view/helpers/csrf_helper.rb
+  563 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionview-4.1.4/lib/action_view/helpers/date_helper.rb
+  564 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionview-4.1.4/lib/action_view/helpers/debug_helper.rb
+  565 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionview-4.1.4/lib/action_view/helpers/javascript_helper.rb
+  566 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/array/access.rb
+  567 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionview-4.1.4/lib/action_view/helpers/url_helper.rb
+  568 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/string/filters.rb
+  569 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionview-4.1.4/lib/action_view/vendor/html-scanner.rb
+  570 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionview-4.1.4/lib/action_view/helpers/sanitize_helper.rb
+  571 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionview-4.1.4/lib/action_view/helpers/output_safety_helper.rb
+  572 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionview-4.1.4/lib/action_view/helpers/text_helper.rb
+  573 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionview-4.1.4/lib/action_view/helpers/form_tag_helper.rb
+  574 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionview-4.1.4/lib/action_view/model_naming.rb
+  575 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionview-4.1.4/lib/action_view/helpers/form_helper.rb
+  576 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionview-4.1.4/lib/action_view/helpers/form_options_helper.rb
+  577 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/number_helper.rb
+  578 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionview-4.1.4/lib/action_view/helpers/number_helper.rb
+  579 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/module/concerning.rb
+  580 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/module/qualified_const.rb
+  581 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/core_ext/module.rb
+  582 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionview-4.1.4/lib/action_view/record_identifier.rb
+  583 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionview-4.1.4/lib/action_view/helpers/record_tag_helper.rb
+  584 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionview-4.1.4/lib/action_view/helpers/rendering_helper.rb
+  585 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionview-4.1.4/lib/action_view/helpers/translation_helper.rb
+  586 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/actionview-4.1.4/lib/action_view/helpers.rb
+  587 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/sprockets-rails-2.1.3/lib/sprockets/rails/helper.rb
+  588 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/sprockets-rails-2.1.3/lib/sprockets/rails/version.rb
+  589 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/railties-4.1.4/lib/rails/engine/configuration.rb
+  590 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/railties-4.1.4/lib/rails/application/configuration.rb
+  591 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/sprockets-rails-2.1.3/lib/sprockets/railtie.rb
+  592 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/railties-4.1.4/lib/rails/all.rb
+  593 /Users/brandontrebitowski/.rvm/gems/ruby-2.1.1@global/gems/activesupport-4.1.4/lib/active_support/string_inquirer.rb
+
+[NOTE]
+You may have encountered a bug in the Ruby interpreter or extension libraries.
+Bug reports are welcome.
+For details: http://www.ruby-lang.org/bugreport.html
+
+~/clients/.../companion-backend/companion[master]$ rails g model user phone_number:string token:string
+^C
