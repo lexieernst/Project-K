@@ -1,3 +1,3 @@
 object @user
 
-attributes :id
+attributes :id, :access_code

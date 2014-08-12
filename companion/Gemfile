@@ -40,4 +40,4 @@ gem 'twilio-ruby', '~> 3.11.6'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
+gem 'pg'
