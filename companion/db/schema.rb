@@ -11,9 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140812133133) do
+ActiveRecord::Schema.define(version: 20140814125603) do
 
-  create_table "contacts", force: true do |t|
+  create_table "contact_relationships", force: true do |t|
     t.integer  "user_id"
     t.integer  "contact_id"
     t.boolean  "favorite"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20140812133133) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "access_code"
+    t.string   "name"
   end
 
 end

@@ -8,7 +8,8 @@ module TokenAuthentication
   def restrict_access
     authenticate_or_request_with_http_token do |token, options|
       #ApiKey.exists?(access_token: token)
-      User.exists?(token: token)
+      @current_user = User.where(token: token).first
+      @current_user != nil
     end
   end
     
