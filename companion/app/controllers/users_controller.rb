@@ -56,8 +56,31 @@ class UsersController < ApplicationController
   end
   
   def access_code
-    if @user = User.where(phone_number: params[:user][:phone_number], 
-      access_code: params[:user][:access_code]).first
+    
+    errors = []
+    Phoner::Phone.default_country_code = '1'
+    
+    begin
+      phone = Phoner::Phone.parse user_params[:phone_number]
+    rescue Exception
+      render json: {
+        error: "Invalid phone number: " + user_params[:phone_number],
+        status: 400
+      }, status: 400
+      return
+    end
+    
+    if phone.to_s.length < 12 then
+      render json: {
+        error: "Invalid phone number: " + user_params[:phone_number],
+        status: 400
+      }, status: 400
+      return
+    end 
+    
+    
+    if @user = User.where(phone_number: phone.to_s, 
+      access_code: user_params[:access_code]).first
       
       # Sucess, generate a login token
       @user.generate_token()
