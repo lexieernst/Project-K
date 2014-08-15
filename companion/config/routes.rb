@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   post 'users/login'
   post 'users/access_code'
   
-  resources :contacts
+  resources :contacts, only: [:index, :create]
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

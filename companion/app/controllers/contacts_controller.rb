@@ -1,6 +1,10 @@
 class ContactsController < ApplicationController
   include TokenAuthentication
   
+  def index
+    @contacts = @current_user.contacts
+  end
+  
   def create
     
     errors = []
@@ -18,7 +22,7 @@ class ContactsController < ApplicationController
         return
       end
         
-      if phone.to_s.length < 10 then
+      if phone.to_s.length < 12 then
         render json: {
           error: "Contact " + c[:name] + " has an invalid phone number: " + c[:phone_number],
           status: 400

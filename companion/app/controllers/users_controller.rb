@@ -2,12 +2,36 @@ require 'twilio-ruby'
 
 class UsersController < ApplicationController
   def login
+    
+    errors = []
+    Phoner::Phone.default_country_code = '1'
+    
+    begin
+      phone = Phoner::Phone.parse user_params[:phone_number]
+    rescue Exception
+      render json: {
+        error: "Invalid phone number: " + user_params[:phone_number],
+        status: 400
+      }, status: 400
+      return
+    end
+    
+    if phone.to_s.length < 12 then
+      render json: {
+        error: "Invalid phone number: " + user_params[:phone_number],
+        status: 400
+      }, status: 400
+      return
+    end 
+    
+    logger.debug("phone "  + phone.to_s)
+    
     # User exists
-    if @user = User.where(phone_number: params[:user][:phone_number]).first
+    if @user = User.where(phone_number: phone.to_s).first
       # Clear the user's old token logging them out of any other devices
       @user.token = nil
     else
-      @user = User.create(user_params)
+      @user = User.create(phone_number: phone.to_s)
     end
     
     # Create new activation code
@@ -26,7 +50,7 @@ class UsersController < ApplicationController
     # Send access code
     @twilio_client.account.messages.create(
       :from => '+15059337234',
-      :to => "+" + @user.phone_number.to_s,
+      :to => @user.phone_number.to_s,
       :body => 'Your Companion access code is ' + @user.access_code.to_s
     )
   end
