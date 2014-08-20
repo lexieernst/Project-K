@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  latitude_start: 1.5
+  longitude_start: 1.5
+  latitude_end: 1.5
+  longitude_end: 1.5
+  arrival_date: 2014-08-19 07:23:24
+  travel_time: 1
+
+two:
+  user_id: 1
+  latitude_start: 1.5
+  longitude_start: 1.5
+  latitude_end: 1.5
+  longitude_end: 1.5
+  arrival_date: 2014-08-19 07:23:24
+  travel_time: 1
