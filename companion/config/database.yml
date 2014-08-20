@@ -23,7 +23,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: companion_prod
+  database: companion_production
   pool: 5
   host: localhost
   username: root

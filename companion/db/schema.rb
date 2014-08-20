@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20140814125603) do
 
-  create_table "contact_relationships", force: true do |t|
+  create_table "contacts", force: true do |t|
     t.integer  "user_id"
     t.integer  "contact_id"
     t.boolean  "favorite"
