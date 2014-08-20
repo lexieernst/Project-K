@@ -6,6 +6,6 @@ class CreateContactRelationships < ActiveRecord::Migration
       t.boolean :favorite
 
       t.timestamps
-    end
+    end            
   end
 end
