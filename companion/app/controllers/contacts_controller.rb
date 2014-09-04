@@ -39,7 +39,7 @@ class ContactsController < ApplicationController
       end
   
       if !@current_user.has_contact?(contact) then
-        @current_user.contact_relationships.build(contact_id: contact.id)
+        @current_user.contact_relationships.build(contact_id: contact.id, name: c[:name])
       end    
     end
   

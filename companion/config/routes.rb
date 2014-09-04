@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   
-  post 'users/login'
-  post 'users/access_code'
+  post 'sessions/login'
+  post 'sessions/access_code'
+  post 'users/push_token'
   
+  resources :users, only: [:update]
   resources :contacts, only: [:index, :create]  
   resources :routes, only: [:create, :update]
   
