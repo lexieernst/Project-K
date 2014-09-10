@@ -3,10 +3,11 @@ Rails.application.routes.draw do
   post 'sessions/login'
   post 'sessions/access_code'
   post 'users/push_token'
+  get 'routes/:slug', to: 'routes#slug'
   
   resources :users, only: [:update]
   resources :contacts, only: [:index, :create]  
-  resources :routes, only: [:create, :update]
+  resources :routes, only: [:create, :update, :show]
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

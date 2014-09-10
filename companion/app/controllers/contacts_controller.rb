@@ -10,6 +10,8 @@ class ContactsController < ApplicationController
     errors = []
     Phoner::Phone.default_country_code = '1'
     
+    contacts_array = []
+    
     contact_params[:contacts].each do |c|
       
       begin
@@ -41,10 +43,13 @@ class ContactsController < ApplicationController
       if !@current_user.has_contact?(contact) then
         @current_user.contact_relationships.build(contact_id: contact.id, name: c[:name])
       end    
+      
+      contacts_array << contact
+      
     end
   
     @current_user.save
-    @contacts = @current_user.contacts
+    @contacts = contacts_array
   end
 
   private

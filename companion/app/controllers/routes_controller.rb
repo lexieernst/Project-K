@@ -1,3 +1,5 @@
+require 'twilio-ruby'
+
 class RoutesController < ApplicationController
   include TokenAuthentication
   
@@ -26,6 +28,17 @@ class RoutesController < ApplicationController
     
     @route.save
     
+    # Create the initial route steps
+    if route_params[:latitude_start] && 
+      route_params[:longitude_start] then
+      
+      route_step = @route.route_steps.build(
+      latitude: route_params[:latitude_start],
+      longitude: route_params[:longitude_start])
+      
+      route_step.save      
+    end
+    
   end
   
   def update
@@ -38,9 +51,44 @@ class RoutesController < ApplicationController
       return
     end
     
+    if route_params[:latitude_current] && 
+      route_params[:longitude_current] then
+      
+      route_step = @route.route_steps.build(
+      latitude: route_params[:latitude_current],
+      longitude: route_params[:longitude_current])
+      
+      route_step.save
+      
+    end
+    
     @route.update(route_params)
     @route.save
     
+  end
+  
+  def broadcast
+    @route = Route.find(params[:id])
+    if @route == nil then
+      render json: {
+        error: "That route does not exist",
+        status: 400
+      }, status: 400
+      return
+    end
+    
+    @route.contacts.each do |contact|
+      # TODO: Check for push token
+      
+    end
+  end
+  
+  def show
+    @route = Route.find(params[:id])
+  end
+  
+  def slug
+    @route = Route.where(slug: params[:slug]).first
   end
   
   private
