@@ -77,9 +77,20 @@ class RoutesController < ApplicationController
       return
     end
     
+    # Twilio Setup
+    account_sid = 'ACa368ee5d51fb013936cd1cac3f6cd403'
+    auth_token = 'f55dca0ee814bc21e7d034f8c6585d6c'
+    
+    # Set up a client to talk to the Twilio REST API
+    @twilio_client = Twilio::REST::Client.new account_sid, auth_token      
     @route.contacts.each do |contact|
       # TODO: Check for push token
-      
+      # Send access code
+      @twilio_client.account.messages.create(
+        :from => '+15059337234',
+        :to => contact.phone_number.to_s,
+        :body => @current_user.phone_number + " has did NOT arrive home safely. Check in on them?"
+      )
     end
   end
   
