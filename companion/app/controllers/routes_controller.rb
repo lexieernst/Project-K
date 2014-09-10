@@ -68,7 +68,7 @@ class RoutesController < ApplicationController
   end
   
   def broadcast
-    @route = Route.find(params[:id])
+    @route = Route.find(params[:route_id])
     if @route == nil then
       render json: {
         error: "That route does not exist",
