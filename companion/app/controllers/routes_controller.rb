@@ -92,7 +92,7 @@ class RoutesController < ApplicationController
         @twilio_client.account.messages.create(
           :from => '+15059337234',
           :to => contact.phone_number.to_s,
-          :body => @current_user.phone_number + " wants you to ensure they arrive at their destination safely. You can follow them here http://companionapp.brandontreb.com/" + @route.slug
+          :body => @current_user.phone_number + " wants you to ensure they arrive at their destination safely. You can follow them here http://companionapp.brandontreb.com/routes/" + @route.slug
         )
       end
     end
