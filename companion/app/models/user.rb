@@ -9,5 +9,18 @@ class User < ActiveRecord::Base
     contact_relationships.find_by(contact_id: other_user.id) != nil
   end
   
+  def pronoun(type)
+    if type == "he" then
+      return self.gender == "male" ? "he" : "she"
+    end
+    if type == "him" then
+      return self.gender == "male" ? "him" : "her"
+    end
+    
+    if type == "his" then
+      return self.gender == "male" ? "his" : "her"
+    end
+  end
+  
 end
 

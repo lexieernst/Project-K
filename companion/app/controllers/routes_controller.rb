@@ -26,12 +26,12 @@ class RoutesController < ApplicationController
       @route.contacts << contact
       
       if contact.push_token then
-        APNS.send_notification(contact.push_token, :alert => @current_user.phone_number + " wants to know, will you make sure they arrive home safely?", :badge => 1, :sound => 'default')
+        APNS.send_notification(contact.push_token, :alert => @current_user.phone_number + " wants to know, will you make sure "+contact.pronoun("he")+" arrives home safely?", :badge => 1, :sound => 'default')
       else
         @twilio_client.account.messages.create(
           :from => '+15059337234',
           :to => contact.phone_number.to_s,
-          :body => @current_user.phone_number + " wants to know, will you make sure they arrive home safely? You can follow them here http://companionapp.brandontreb.com/routes/" + @route.slug
+          :body => @current_user.phone_number + " wants to know, will you make sure "+contact.pronoun("he")+" arrives home safely? You can follow "+contact.pronoun("him")+" here http://companionapp.brandontreb.com/routes/" + @route.slug
         )
       end
       
@@ -98,12 +98,12 @@ class RoutesController < ApplicationController
       # TODO: Check for push token
       # Send access code
       if contact.push_token then
-        APNS.send_notification(contact.push_token, :alert => @current_user.phone_number + " did not arrive at their destination safely, check in on them?", :badge => 1, :sound => 'default')
+        APNS.send_notification(contact.push_token, :alert => @current_user.phone_number + " did not arrive at "+contact.pronoun("his")+" destination safely, check in on "+contact.pronoun("him")+"?", :badge => 1, :sound => 'default')
       else
         @twilio_client.account.messages.create(
           :from => '+15059337234',
           :to => contact.phone_number.to_s,
-          :body => @current_user.phone_number + " did not arrive at their destination safely. You can check on them here http://companionapp.brandontreb.com/routes/" + @route.slug
+          :body => @current_user.phone_number + " did not arrive at "+contact.pronoun("his")+" destination safely. You can check on "+contact.pronoun("him")+" here http://companionapp.brandontreb.com/routes/" + @route.slug
         )
       end
     end
