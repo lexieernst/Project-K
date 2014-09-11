@@ -15,10 +15,9 @@ class UsersController < ApplicationController
       return
     end
     
+    @current_user.push_token = push_token
+    @current_user.save
     @user = @current_user
-    @user.push_token = push_token
-    @user.save
-    
   end
   
   def update

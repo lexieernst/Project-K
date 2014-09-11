@@ -86,11 +86,15 @@ class RoutesController < ApplicationController
     @route.contacts.each do |contact|
       # TODO: Check for push token
       # Send access code
-      @twilio_client.account.messages.create(
-        :from => '+15059337234',
-        :to => contact.phone_number.to_s,
-        :body => @current_user.phone_number + " has did NOT arrive home safely. Check in on them?"
-      )
+      if contact.push_token then
+        APNS.send_notification(token, :alert => @current_user.phone_number + " did not arrive at their destination safely, check in on them?", :badge => 1, :sound => 'default')
+      else
+        @twilio_client.account.messages.create(
+          :from => '+15059337234',
+          :to => contact.phone_number.to_s,
+          :body => @current_user.phone_number + " wants you to ensure they arrive at their destination safely. You can follow them here http://companionapp.brandontreb.com/" + @route.slug
+        )
+      end
     end
   end
   
