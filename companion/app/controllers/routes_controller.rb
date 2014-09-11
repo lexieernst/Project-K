@@ -20,6 +20,13 @@ class RoutesController < ApplicationController
     @route.longitude_current = @route.latitude_start
     
     # Assign contacts to the route
+    # Twilio Setup
+    account_sid = 'ACa368ee5d51fb013936cd1cac3f6cd403'
+    auth_token = 'f55dca0ee814bc21e7d034f8c6585d6c'
+    
+    # Set up a client to talk to the Twilio REST API
+    @twilio_client = Twilio::REST::Client.new account_sid, auth_token 
+    
     contact_params[:contacts].each do |contact_param|
       logger.debug(contact_param.to_s)
       contact = User.find(contact_param[:id])
