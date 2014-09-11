@@ -14,8 +14,17 @@ class ContactsController < ApplicationController
     
     contact_params[:contacts].each do |c|
       
+      pre = c[:phone_number]
+      if pre.at(0) == " " then
+        pre = pre.from(1)
+      end
+    
+      if pre.length == 11 and pre.at(0) == "1" then
+        pre = pre.from(1)
+      end
+      
       begin
-        phone = Phoner::Phone.parse c[:phone_number]
+        phone = Phoner::Phone.parse pre
       rescue Exception
         render json: {
           error: "Contact " + c[:name] + " has an invalid phone number: " + c[:phone_number],

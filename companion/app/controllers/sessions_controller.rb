@@ -7,8 +7,17 @@ class SessionsController < ApplicationController
     errors = []
     Phoner::Phone.default_country_code = '1'
     
+    pre = user_params[:phone_number]
+    if pre.at(0) == " " then
+      pre = pre.from(1)
+    end
+    
+    if pre.length == 11 and pre.at(0) == "1" then
+      pre = pre.from(1)
+    end
+    
     begin
-      phone = Phoner::Phone.parse user_params[:phone_number]
+      phone = Phoner::Phone.parse pre
     rescue Exception
       render json: {
         error: "Invalid phone number: " + user_params[:phone_number],
