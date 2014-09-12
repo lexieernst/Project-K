@@ -19,6 +19,11 @@ class RoutesController < ApplicationController
     @route.latitude_current = @route.latitude_start
     @route.longitude_current = @route.latitude_start
     
+    name = @current_user.name
+    if name.length == 0 then
+      name = @current_user.phone_number
+    end
+    
     # Assign contacts to the route
     # Twilio Setup
     account_sid = 'ACa368ee5d51fb013936cd1cac3f6cd403'
@@ -33,12 +38,12 @@ class RoutesController < ApplicationController
       @route.contacts << contact
       
       if contact.push_token then
-        APNS.send_notification(contact.push_token, :alert => @current_user.phone_number + " wants to know, will you make sure "+contact.pronoun("he")+" arrives home safely?", :badge => 1, :sound => 'default')
+        APNS.send_notification(contact.push_token, :alert => name + " wants to know, will you make sure "+contact.pronoun("he")+" arrives home safely?", :badge => 1, :sound => 'default')
       else
         @twilio_client.account.messages.create(
           :from => '+15059337234',
           :to => contact.phone_number.to_s,
-          :body => @current_user.phone_number + " wants to know, will you make sure "+contact.pronoun("he")+" arrives home safely? You can follow "+contact.pronoun("him")+" here http://companionapp.brandontreb.com/routes/" + @route.slug
+          :body => name + " wants to know, will you make sure "+contact.pronoun("he")+" arrives home safely? You can follow "+contact.pronoun("him")+" here http://companionapp.brandontreb.com/routes/" + @route.slug
         )
       end
       
