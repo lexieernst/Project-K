@@ -22,6 +22,14 @@ class UsersController < ApplicationController
   
   def update
     @current_user.update(user_params)
+    
+    # Parses Danny's iPhone to Danny
+    if user_params[:name] and user_params[:name].length > 0 then
+      name = user_params[:name].split("'")
+      @current_user.name = name[0]
+      @current_user.save
+    end
+    
     @user = @current_user
   end
   
