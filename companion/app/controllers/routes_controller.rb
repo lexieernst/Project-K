@@ -43,7 +43,7 @@ class RoutesController < ApplicationController
         @twilio_client.account.messages.create(
           :from => '+15059337234',
           :to => contact.phone_number.to_s,
-          :body => name + " wants to know, will you make sure "+contact.pronoun("he")+" arrives home safely? You can follow "+contact.pronoun("him")+" here http://companionapp.brandontreb.com/routes/" + @route.slug
+          :body => name + " wants to know, will you make sure "+contact.pronoun("he")+" arrives home safely? You can follow "+contact.pronoun("him")+" here http://companionapp.brandontreb.com/routes/watch/" + @route.slug
         )
       end
       
@@ -148,7 +148,7 @@ class RoutesController < ApplicationController
         @twilio_client.account.messages.create(
           :from => '+15059337234',
           :to => contact.phone_number.to_s,
-          :body => name + " did not arrive at "+contact.pronoun("his")+" destination safely. You can check on "+contact.pronoun("him")+" here http://companionapp.brandontreb.com/routes/" + @route.slug
+          :body => name + " did not arrive at "+contact.pronoun("his")+" destination safely. You can check on "+contact.pronoun("him")+" here http://companionapp.brandontreb.com/routes/watch/" + @route.slug
         )
       end
     end
