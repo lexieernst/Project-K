@@ -43,8 +43,9 @@
 		  flightPath.setMap(map);
 		  
 		  // Draw starting location
+		  var startLatLon = new google.maps.LatLng(<%= @route.route_steps[0].latitude %>,<%= @route.route_steps[0].longitude %>);
 		  var marker = new google.maps.Marker({
-		        position: new google.maps.LatLng(<%= @route.route_steps[0].latitude %>,<%= @route.route_steps[0].longitude %>);
+		        position: startLatLon,
 		        map: map,
 		        title: '<%= @route.user.name %>\'s starting location'
 		    });
