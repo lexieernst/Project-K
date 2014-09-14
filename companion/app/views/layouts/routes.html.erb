@@ -50,6 +50,13 @@
 		        title: '<%= @route.user.name %>\'s starting location'
 		    });
 		  
+		  // Draw ending location
+		  var endLatLon = new google.maps.LatLng(<%= @route.route_steps[@route.route_steps.count-1].latitude %>,<%= @route.route_steps[@route.route_steps.count-1].longitude %>);
+		  var marker = new google.maps.Marker({
+		        position: endLatLon,
+		        map: map,
+		        title: '<%= @route.user.name %>'
+		    });
 		}
 
 		// google.maps.event.addDomListener(window, 'load', initialize);
