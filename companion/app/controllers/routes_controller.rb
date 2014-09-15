@@ -37,13 +37,17 @@ class RoutesController < ApplicationController
       contact = User.find(contact_param[:id])
       @route.contacts << contact
       
+      contact_name = @route.user.contact_relationships.where(contact_id: contact.id).first.name      
+      
       if contact.push_token then
-        APNS.send_notification(contact.push_token, :alert => name + " wants to know, will you make sure "+contact.pronoun("he")+" arrives home safely?", :badge => 1, :sound => 'default')
+        text = "Hey " + contact_name + ", " + name + " has requested that you be " + contact.pronoun("his") + " companion."
+        APNS.send_notification(contact.push_token, :alert => text, :badge => 1, :sound => 'default')
       else
+        text = "Hey " + contact_name + ", " + name + " has requested that you be " + contact.pronoun("his") + " companion. Follow " + contact.pronoun("him") + " at http://companionapp.brandontreb.com/routes/watch/" + @route.slug
         @twilio_client.account.messages.create(
           :from => '+15059337234',
           :to => contact.phone_number.to_s,
-          :body => name + " wants to know, will you make sure "+contact.pronoun("he")+" arrives home safely? You can follow "+contact.pronoun("him")+" here http://companionapp.brandontreb.com/routes/watch/" + @route.slug
+          :body => text
         )
       end
       
