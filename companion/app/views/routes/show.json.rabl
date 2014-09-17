@@ -1,6 +1,6 @@
 object @route
 
-attributes :id, :complete
+attributes :id, :complete, :slug
 
 child :route_steps, :object_root => false do
   attributes :id, :latitude, :longitude, :created_at

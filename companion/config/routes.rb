@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   post 'sessions/access_code'
   post 'users/push_token'
   get 'routes/watch/:slug', to: 'routes#slug'
+  get 'routes/watching'
   
   resources :users, only: [:update]
   resources :contacts, only: [:index, :create]  

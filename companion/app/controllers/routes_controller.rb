@@ -39,11 +39,15 @@ class RoutesController < ApplicationController
       
       contact_name = @route.user.contact_relationships.where(contact_id: contact.id).first.name      
       
+      if contact.name then
+      	contact_name = contact.name
+      end
+      
       if contact.push_token then
-        text = "Hey " + contact_name + ", " + name + " has requested that you be " + contact.pronoun("his") + " companion."
+        text = "Hey " + contact_name + ", " + name + " has requested that you be " + @current_user.pronoun("his") + " companion."
         APNS.send_notification(contact.push_token, :alert => text, :badge => 1, :sound => 'default')
       else
-        text = "Hey " + contact_name + ", " + name + " has requested that you be " + contact.pronoun("his") + " companion. Follow " + contact.pronoun("him") + " at http://companionapp.brandontreb.com/routes/watch/" + @route.slug
+        text = "Hey " + contact_name + ", " + name + " has requested that you be " + @current_user.pronoun("his") + " companion. Follow " + @current_user.pronoun("him") + " at http://companionapp.brandontreb.com/routes/watch/" + @route.slug
         @twilio_client.account.messages.create(
           :from => '+15059337234',
           :to => contact.phone_number.to_s,
@@ -90,12 +94,14 @@ class RoutesController < ApplicationController
     end
     
     @route.update(route_params)
+    @route.save!
     
-    if route_params[:complete] then
+    if @route.complete then
       name = @current_user.name
       if name.length == 0 then
         name = @current_user.phone_number
       end
+      
       # Twilio Setup
       account_sid = 'ACa368ee5d51fb013936cd1cac3f6cd403'
       auth_token = 'f55dca0ee814bc21e7d034f8c6585d6c'
@@ -103,26 +109,25 @@ class RoutesController < ApplicationController
       # Set up a client to talk to the Twilio REST API
       @twilio_client = Twilio::REST::Client.new account_sid, auth_token      
       @route.contacts.each do |contact|
-        # TODO: Check for push token
-        # Send access code        
-        
+								        
         if contact.push_token then
-          APNS.send_notification(contact.push_token, :alert => name + " arrived at "+contact.pronoun("his")+" destination safely.", :badge => 1, :sound => 'default')
+          APNS.send_notification(contact.push_token, :alert => name + " arrived at "+@current_user.pronoun("his")+" destination safely.", :badge => 1, :sound => 'default')
         else
           @twilio_client.account.messages.create(
             :from => '+15059337234',
             :to => contact.phone_number.to_s,
-            :body => name + " arrived at "+contact.pronoun("his")+" destination safely."
+            :body => name + " arrived at "+@current_user.pronoun("his")+" destination safely."
           )
         end
       end
     end
     
-    @route.save
+    
     
   end
   
   def broadcast
+  	type = params[:type]
     @route = Route.find(params[:route_id])
     if @route == nil then
       render json: {
@@ -144,15 +149,32 @@ class RoutesController < ApplicationController
     # Set up a client to talk to the Twilio REST API
     @twilio_client = Twilio::REST::Client.new account_sid, auth_token      
     @route.contacts.each do |contact|
-      # TODO: Check for push token
-      # Send access code
-      if contact.push_token then
-        APNS.send_notification(contact.push_token, :alert => name + " did not arrive at "+contact.pronoun("his")+" destination safely, check in on "+contact.pronoun("him")+"?", :badge => 1, :sound => 'default')
+      
+      contact_name = @route.user.contact_relationships.where(contact_id: contact.id).first.name      
+      
+      if contact.name then
+      	contact_name = contact.name
+      end
+
+			# Did not arrive
+			if type == 'no_arrive' then
+				message = name + " did not arrive at "+@current_user.pronoun("his")+" destination safely, check in on "+@current_user.pronoun("him")+"?"      
+			elsif type == 'request' then
+				message = name + " has requested that you check in on "+@current_user.pronoun("him")+"."      			
+			elsif type == 'ok' then
+				message = name + " has confirmed "+@current_user.pronoun("he")+" is okay."      			
+			end
+
+      
+      if contact.push_token then				
+        APNS.send_notification(contact.push_token, :alert => message, :badge => 1, :sound => 'default')
       else
+	      message = message +" http://companionapp.brandontreb.com/routes/watch/" + @route.slug    
+	      
         @twilio_client.account.messages.create(
           :from => '+15059337234',
           :to => contact.phone_number.to_s,
-          :body => name + " did not arrive at "+contact.pronoun("his")+" destination safely. You can check on "+contact.pronoun("him")+" here http://companionapp.brandontreb.com/routes/watch/" + @route.slug
+          :body => message
         )
       end
     end
@@ -164,6 +186,10 @@ class RoutesController < ApplicationController
   
   def slug
     @route = Route.where(slug: params[:slug]).first
+  end
+  
+  def watching
+ 		@routes = @current_user.routes_watching.where(complete:false)
   end
   
   private
