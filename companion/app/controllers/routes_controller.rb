@@ -28,6 +28,7 @@ class RoutesController < ApplicationController
     # Twilio Setup
     account_sid = 'ACa368ee5d51fb013936cd1cac3f6cd403'
     auth_token = 'f55dca0ee814bc21e7d034f8c6585d6c'
+    bitly = Bitly.new('brandontreb', 'R_2a413ebd15254a72b500ec2ce83f982d')
     
     # Set up a client to talk to the Twilio REST API
     @twilio_client = Twilio::REST::Client.new account_sid, auth_token 
@@ -43,11 +44,17 @@ class RoutesController < ApplicationController
       	contact_name = contact.name
       end
       
+      contact_name = contact_name.split(" ")[0]
+      
       if contact.push_token then
         text = "Hey " + contact_name + ", " + name + " has requested that you be " + @current_user.pronoun("his") + " companion."
-        APNS.send_notification(contact.push_token, :alert => text, :badge => 1, :sound => 'default')
+        APNS.send_notification(contact.push_token, 
+        :alert => text, 
+        :badge => 1, 
+        :sound => 'default',
+        :other => {:route_id => @route.id.to_s})
       else
-        text = "Hey " + contact_name + ", " + name + " has requested that you be " + @current_user.pronoun("his") + " companion. Follow " + @current_user.pronoun("him") + " at http://companionapp.brandontreb.com/routes/watch/" + @route.slug
+        text = "Hey " + contact_name + ", " + name + " has requested that you be " + @current_user.pronoun("his") + " companion. Follow " + @current_user.pronoun("him") + " at " + bitly.shorten("http://companionapp.brandontreb.com/routes/watch/" + @route.slug).short_url
         @twilio_client.account.messages.create(
           :from => '+15059337234',
           :to => contact.phone_number.to_s,
@@ -105,13 +112,18 @@ class RoutesController < ApplicationController
       # Twilio Setup
       account_sid = 'ACa368ee5d51fb013936cd1cac3f6cd403'
       auth_token = 'f55dca0ee814bc21e7d034f8c6585d6c'
-    
+    	bitly = Bitly.new('brandontreb', 'R_2a413ebd15254a72b500ec2ce83f982d')
+    	
       # Set up a client to talk to the Twilio REST API
       @twilio_client = Twilio::REST::Client.new account_sid, auth_token      
       @route.contacts.each do |contact|
 								        
         if contact.push_token then
-          APNS.send_notification(contact.push_token, :alert => name + " arrived at "+@current_user.pronoun("his")+" destination safely.", :badge => 1, :sound => 'default')
+          APNS.send_notification(contact.push_token, 
+          :alert => name + " arrived at "+@current_user.pronoun("his")+" destination safely.", 
+          :badge => 1, 
+          :sound => 'default',
+          :other => {:route_id => @route.id.to_s})
         else
           @twilio_client.account.messages.create(
             :from => '+15059337234',
@@ -145,7 +157,8 @@ class RoutesController < ApplicationController
     # Twilio Setup
     account_sid = 'ACa368ee5d51fb013936cd1cac3f6cd403'
     auth_token = 'f55dca0ee814bc21e7d034f8c6585d6c'
-    
+  	bitly = Bitly.new('brandontreb', 'R_2a413ebd15254a72b500ec2ce83f982d')
+  	  
     # Set up a client to talk to the Twilio REST API
     @twilio_client = Twilio::REST::Client.new account_sid, auth_token      
     @route.contacts.each do |contact|
@@ -155,6 +168,8 @@ class RoutesController < ApplicationController
       if contact.name then
       	contact_name = contact.name
       end
+      
+      contact_name = contact_name.split(" ")[0]
 
 			# Did not arrive
 			if type == 'no_arrive' then
@@ -167,9 +182,13 @@ class RoutesController < ApplicationController
 
       
       if contact.push_token then				
-        APNS.send_notification(contact.push_token, :alert => message, :badge => 1, :sound => 'default')
+        APNS.send_notification(contact.push_token, 
+        :alert => message, 
+        :badge => 1, 
+        :sound => 'default',
+        :other => {:route_id => @route.id.to_s})
       else
-	      message = message +" http://companionapp.brandontreb.com/routes/watch/" + @route.slug    
+	      message = message + " " + bitly.shorten("http://companionapp.brandontreb.com/routes/watch/" + @route.slug).short_url
 	      
         @twilio_client.account.messages.create(
           :from => '+15059337234',
@@ -203,6 +222,8 @@ class RoutesController < ApplicationController
       :longitude_current,
       :arrival_date,
       :travel_time,
+      :arrival_text,
+      :time_distance_text,
       :complete)
     end
     

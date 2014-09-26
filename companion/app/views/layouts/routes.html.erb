@@ -13,18 +13,35 @@
     </style>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
     <script>
-		// This example creates a 2-pixel-wide red polyline showing
-		// the path of William Kingsford Smith's first trans-Pacific flight between
-		// Oakland, CA, and Brisbane, Australia.
+	
+		var map;
+		var directionsDisplay;
+		var directionsService = new google.maps.DirectionsService();
+	
+		function calcRoute(start, end) {
+		  var request = {
+		      origin:start,
+		      destination:end,
+		      travelMode: google.maps.TravelMode.WALKING
+		  };
+		  directionsService.route(request, function(response, status) {
+		    if (status == google.maps.DirectionsStatus.OK) {
+		      directionsDisplay.setDirections(response);
+		    }
+		  });
+		}
 
 		function initialize() {
+			directionsDisplay = new google.maps.DirectionsRenderer({suppressMarkers: true});
+			directionsDisplay.suppressMarkers = true;
+			
 		  var mapOptions = {
 		    zoom: 15,
 		    center: new google.maps.LatLng(<%= @route.latitude_start %>,<%= @route.longitude_start %>),
 		    mapTypeId: google.maps.MapTypeId.ROADMAP
 		  };
 
-		  var map = new google.maps.Map(document.getElementById('map-canvas'),
+		  map = new google.maps.Map(document.getElementById('map-canvas'),
 		      mapOptions);
 
 		  var flightPlanCoordinates = [
@@ -35,9 +52,9 @@
 		  var flightPath = new google.maps.Polyline({
 		    path: flightPlanCoordinates,
 		    geodesic: true,
-		    strokeColor: '#FF0000',
-		    strokeOpacity: 1.0,
-		    strokeWeight: 2
+		    strokeColor: '#00FF00',
+		    strokeOpacity: 0.5,
+		    strokeWeight: 5
 		  });
 
 		  flightPath.setMap(map);
@@ -47,10 +64,12 @@
 		      content: "<%= @route.user.name %>\'s starting location"
 		  });
 		  var startLatLon = new google.maps.LatLng(<%= @route.route_steps[0].latitude %>,<%= @route.route_steps[0].longitude %>);
+		  var greenPin = '/images/green-pin.png';
 		  var markers = new google.maps.Marker({
 		        position: startLatLon,
 		        map: map,
-		        title: '<%= @route.user.name %>\'s starting location'
+		        title: '<%= @route.user.name %>\'s starting location',
+		        icon: greenPin
 		    });
 			
 			google.maps.event.addListener(markers, 'click', function() {
@@ -62,18 +81,41 @@
 		      content: '<%= @route.user.name %>'
 		  });
 		  var endLatLon = new google.maps.LatLng(<%= @route.route_steps[@route.route_steps.count-1].latitude %>,<%= @route.route_steps[@route.route_steps.count-1].longitude %>);
+		  var image = '/images/blueFriendButton-50.png';
 		  var markere = new google.maps.Marker({
 		        position: endLatLon,
 		        map: map,
-		        title: '<%= @route.user.name %>'
+		        title: '<%= @route.user.name %>',
+		        icon: image
 		    });
 			
 			google.maps.event.addListener(markere, 'click', function() {
 			      infowindowe.open(map,markere);
 			    });
-		}
-
-		// google.maps.event.addDomListener(window, 'load', initialize);
+			    
+			 // Draw destination
+			var infowindowd = new google.maps.InfoWindow({
+		      content: '<%= @route.user.name %>\'s Destination'
+		  });
+		  var dLatLon = new google.maps.LatLng(<%= @route.latitude_end %>,<%= @route.longitude_end %>);
+		  var redPin = '/images/pin.png';
+		  var markerd = new google.maps.Marker({
+		        position: dLatLon,
+		        map: map,
+		        title: '<%= @route.user.name %>\'s Destination',
+		        icon: redPin
+		    });
+			
+			google.maps.event.addListener(markerd, 'click', function() {
+			      infowindowd.open(map,markerd);
+			    }); 
+			    
+			directionsDisplay.setMap(map);
+			
+			var s = new google.maps.LatLng(<%= @route.latitude_start %>,<%= @route.longitude_start %>);
+			var e = new google.maps.LatLng(<%= @route.latitude_end %>,<%= @route.longitude_end %>);
+			calcRoute(s,e)
+		}		
 
     </script>
   </head>
