@@ -49,8 +49,8 @@ class SessionsController < ApplicationController
     @user.save
     
     # Twilio Setup
-    account_sid = 'ACa368ee5d51fb013936cd1cac3f6cd403'
-    auth_token = 'f55dca0ee814bc21e7d034f8c6585d6c'
+    account_sid = 'AC276b39d77e43bc54720734cb5bf01c36'
+    auth_token = 'b77f29432e31a5bd8993e342432ed8c0'
     
     # Set up a client to talk to the Twilio REST API
     @twilio_client = Twilio::REST::Client.new account_sid, auth_token
@@ -59,7 +59,7 @@ class SessionsController < ApplicationController
     
     # Send access code
     @twilio_client.account.messages.create(
-      :from => '+15059337234',
+      :from => '+12486483597',
       :to => @user.phone_number.to_s,
       :body => 'Your Companion access code is ' + @user.access_code.to_s
     )

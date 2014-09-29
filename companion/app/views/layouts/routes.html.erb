@@ -18,6 +18,10 @@
 		var directionsDisplay;
 		var directionsService = new google.maps.DirectionsService();
 	
+		function reload() {
+			window.location.reload()			
+		}
+	
 		function calcRoute(start, end) {
 		  var request = {
 		      origin:start,
@@ -116,6 +120,10 @@
 			var e = new google.maps.LatLng(<%= @route.latitude_end %>,<%= @route.longitude_end %>);
 			calcRoute(s,e)
 		}		
+
+		<% if !@route.complete then %>
+			setTimeout(reload, 10000);
+		<% end %>
 
     </script>
   </head>
