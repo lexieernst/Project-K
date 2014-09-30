@@ -24,6 +24,8 @@ class RoutesController < ApplicationController
       name = @current_user.phone_number
     end
     
+    @route.complete = false
+    
     # Assign contacts to the route
     # Twilio Setup
     account_sid = 'AC276b39d77e43bc54720734cb5bf01c36'
@@ -103,7 +105,7 @@ class RoutesController < ApplicationController
     @route.update(route_params)
     @route.save!
     
-    if @route.complete then
+    if @route.complete == true then
       name = @current_user.name
       if name.length == 0 then
         name = @current_user.phone_number
