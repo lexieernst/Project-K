@@ -56,7 +56,7 @@ class RoutesController < ApplicationController
         :sound => 'default',
         :other => {:route_id => @route.id.to_s})
       else
-        text = "Hey " + contact_name + ", " + name + " has requested that you be " + @current_user.pronoun("his") + " companion. Follow " + @current_user.pronoun("him") + " at " + bitly.shorten("http://companionapp.brandontreb.com/routes/watch/" + @route.slug).short_url
+        text = "Hey " + contact_name + ", " + name + " has requested that you be " + @current_user.pronoun("his") + " companion. Follow " + @current_user.pronoun("him") + " at " + bitly.shorten("http://livemap.companionapp.io/routes/watch/" + @route.slug).short_url
         @twilio_client.account.messages.create(
           :from => '+12486483597',
           :to => contact.phone_number.to_s,
@@ -102,10 +102,7 @@ class RoutesController < ApplicationController
       
     end
     
-    @route.update(route_params)
-    @route.save!
-    
-    if @route.complete == true then
+    if route_params[:complete] == "true" and @route.complete != true then
       name = @current_user.name
       if name.length == 0 then
         name = @current_user.phone_number
@@ -118,11 +115,17 @@ class RoutesController < ApplicationController
     	
       # Set up a client to talk to the Twilio REST API
       @twilio_client = Twilio::REST::Client.new account_sid, auth_token      
+      
+      message = name + " has arrived at "+@current_user.pronoun("his")+" destination safely."
+      if params[:force] then
+      	message = name + " has ended "+@current_user.pronoun("his")+" trip."
+      end
+      
       @route.contacts.each do |contact|
 								        
         if contact.push_token then
           APNS.send_notification(contact.push_token, 
-          :alert => name + " has arrived at "+@current_user.pronoun("his")+" destination safely.", 
+          :alert => message,
           :badge => 1, 
           :sound => 'default',
           :other => {:route_id => @route.id.to_s})
@@ -130,13 +133,14 @@ class RoutesController < ApplicationController
           @twilio_client.account.messages.create(
             :from => '+12486483597',
             :to => contact.phone_number.to_s,
-            :body => name + " has arrived at "+@current_user.pronoun("his")+" destination safely."
+            :body => message
           )
         end
       end
-    end
+    end    
     
-    
+    @route.update(route_params)
+    @route.save!
     
   end
   
@@ -190,7 +194,7 @@ class RoutesController < ApplicationController
         :sound => 'default',
         :other => {:route_id => @route.id.to_s})
       else
-	      message = message + " " + bitly.shorten("http://companionapp.brandontreb.com/routes/watch/" + @route.slug).short_url
+	      message = message + " " + bitly.shorten("http://livemap.companionapp.io/routes/watch/" + @route.slug).short_url
 	      
         @twilio_client.account.messages.create(
           :from => '+12486483597',
