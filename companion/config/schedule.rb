@@ -22,3 +22,11 @@
 every 3.hours do
   rake "companion:reset_push_tokens", :environment => 'production' 
 end
+
+every 10.minutes do
+  rake "companion:end_routes", :environment => 'production' 
+end
+
+every 1.minute do 
+	rake "companion:send_marketing_messages", :environment => 'production' 
+end

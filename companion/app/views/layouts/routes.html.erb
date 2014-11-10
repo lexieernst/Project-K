@@ -12,14 +12,39 @@
       }
     </style>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script>
 	
 		var map;
 		var directionsDisplay;
-		var directionsService = new google.maps.DirectionsService();
-	
+		var userPathOverlay;
+		var lastRouteStepIdx = <%= @route.route_steps.count.to_s %>;
+		var directionsService = new google.maps.DirectionsService();		
+		var userLocationMarker;
+		
 		function reload() {
-			window.location.reload()			
+			$.get( "http://livemap.companionapp.io/routes/watch/<%= @route.slug %>.json", function( data ) {
+			  
+			  route_steps = data.route_steps;
+			  var path = userPathOverlay.getPath();			  
+			  
+			  for(var i = lastRouteStepIdx; i < route_steps.length - 1; i++) {
+			  	var route_step = route_steps[i];
+				  var pt = new google.maps.LatLng(route_step.latitude, route_step.longitude);
+			  	path.push(pt);
+			  }
+			  
+			  lastRouteStepIdx = route_steps.length-1;
+			  
+			  // Zoom on user
+			  var location = new google.maps.LatLng(route_steps[route_steps.length-1].latitude,route_steps[route_steps.length-1].longitude);
+			  userLocationMarker.setPosition( location );
+	    	map.panTo( location );
+			  
+			  if(!data.complete) {
+				  setTimeout(reload, 1000);
+				}
+			});
 		}
 	
 		function calcRoute(start, end) {
@@ -31,6 +56,12 @@
 		  directionsService.route(request, function(response, status) {
 		    if (status == google.maps.DirectionsStatus.OK) {
 		      directionsDisplay.setDirections(response);
+		      
+		      setTimeout(function() {
+		      		var pt = new google.maps.LatLng(<%= @route.route_steps[@route.route_steps.count-1].latitude %>,<%= @route.route_steps[@route.route_steps.count-1].longitude %>);
+			        map.setCenter(pt);
+		      }, 1000);
+		      
 		    }
 		  });
 		}
@@ -41,7 +72,7 @@
 			
 		  var mapOptions = {
 		    zoom: 15,
-		    center: new google.maps.LatLng(<%= @route.latitude_start %>,<%= @route.longitude_start %>),
+		    center: new google.maps.LatLng(<%= @route.route_steps[@route.route_steps.count-1].latitude %>,<%= @route.route_steps[@route.route_steps.count-1].longitude %>),
 		    mapTypeId: google.maps.MapTypeId.ROADMAP
 		  };
 
@@ -50,10 +81,10 @@
 
 		  var flightPlanCoordinates = [
 		  	<% @route.route_steps.each do |route_step| %>
-		    new google.maps.LatLng(<%= route_step.latitude %>, <%= route_step.longitude %>),
-			<% end %>
+		    	new google.maps.LatLng(<%= route_step.latitude %>, <%= route_step.longitude %>),
+				<% end %>
 		  ];
-		  var flightPath = new google.maps.Polyline({
+		  userPathOverlay = new google.maps.Polyline({
 		    path: flightPlanCoordinates,
 		    geodesic: true,
 		    strokeColor: '#00FF00',
@@ -61,7 +92,7 @@
 		    strokeWeight: 5
 		  });
 
-		  flightPath.setMap(map);
+		  userPathOverlay.setMap(map);
 		  
 		  // Draw starting location
 		  var infowindows = new google.maps.InfoWindow({
@@ -80,21 +111,21 @@
 			      infowindows.open(map,markers);
 			    });
 		  
-		  // Draw ending location
+		  // Draw current location
 		  var infowindowe = new google.maps.InfoWindow({
 		      content: '<%= @route.user.name %>'
 		  });
 		  var endLatLon = new google.maps.LatLng(<%= @route.route_steps[@route.route_steps.count-1].latitude %>,<%= @route.route_steps[@route.route_steps.count-1].longitude %>);
 		  var image = '/images/blueFriendButton-50.png';
-		  var markere = new google.maps.Marker({
+		  userLocationMarker = new google.maps.Marker({
 		        position: endLatLon,
 		        map: map,
 		        title: '<%= @route.user.name %>',
 		        icon: image
 		    });
 			
-			google.maps.event.addListener(markere, 'click', function() {
-			      infowindowe.open(map,markere);
+			google.maps.event.addListener(userLocationMarker, 'click', function() {
+			      infowindowe.open(map,userLocationMarker);
 			    });
 			    
 			 // Draw destination
@@ -122,7 +153,7 @@
 		}		
 
 		<% if !@route.complete then %>
-			setTimeout(reload, 10000);
+			setTimeout(reload, 1000);
 		<% end %>
 
     </script>
