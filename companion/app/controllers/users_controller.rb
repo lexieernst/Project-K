@@ -7,6 +7,18 @@ class UsersController < ApplicationController
     
     begin
       push_token = user_params[:push_token]
+      
+      # Send to Parse
+      installation = Parse::Installation.new
+			installation["deviceToken"] = push_token
+			installation["deviceType"] = "ios"
+			installation["channels"] = ["companion" + push_token]
+			installation.save
+			
+			# Update the model
+			@current_user.parse_object_id = installation["objectId"]
+			logger.debug("PARSE " + installation.to_s)
+      
     rescue Exception
       render json: {
         error: "No push token",

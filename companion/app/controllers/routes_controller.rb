@@ -49,12 +49,13 @@ class RoutesController < ApplicationController
       contact_name = contact_name.split(" ")[0]
       
       if contact.push_token then
+      	#parse
         text = "Hey " + contact_name + ", " + name + " has requested that you be " + @current_user.pronoun("his") + " companion."
-        APNS.send_notification(contact.push_token, 
-        :alert => text, 
-        :badge => 1, 
-        :sound => 'default',
-        :other => {:route_id => @route.id.to_s})
+				channel = "companion" + contact.push_token
+				data = {:alert => text, :route_id => @route.id.to_s, :badge => 1 }
+				push = Parse::Push.new(data,channel)
+				push.type = "ios"
+				push.save
       else
         text = "Hey " + contact_name + ", " + name + " has requested that you be " + @current_user.pronoun("his") + " companion. Follow " + @current_user.pronoun("him") + " at " + bitly.shorten("http://livemap.companionapp.io/routes/watch/" + @route.slug).short_url
         @twilio_client.account.messages.create(
@@ -124,11 +125,13 @@ class RoutesController < ApplicationController
       @route.contacts.each do |contact|
 								        
         if contact.push_token then
-          APNS.send_notification(contact.push_token, 
-          :alert => message,
-          :badge => 1, 
-          :sound => 'default',
-          :other => {:route_id => @route.id.to_s})
+
+          channel = "companion" + contact.push_token
+					data = {:alert => message, :route_id => @route.id.to_s, :badge => 1 }
+					push = Parse::Push.new(data,channel)
+					push.type = "ios"
+					push.save
+
         else
           @twilio_client.account.messages.create(
             :from => '+12486483597',
@@ -188,11 +191,13 @@ class RoutesController < ApplicationController
 
       
       if contact.push_token then				
-        APNS.send_notification(contact.push_token, 
-        :alert => message, 
-        :badge => 1, 
-        :sound => 'default',
-        :other => {:route_id => @route.id.to_s})
+        
+        channel = "companion" + contact.push_token
+				data = {:alert => message, :route_id => @route.id.to_s, :badge => 1 }
+				push = Parse::Push.new(data,channel)
+				push.type = "ios"
+				push.save
+
       else
 	      message = message + " " + bitly.shorten("http://livemap.companionapp.io/routes/watch/" + @route.slug).short_url
 	      

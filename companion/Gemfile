@@ -21,3 +21,4 @@ gem 'turbolinks'
 gem 'apns'
 gem 'bitly'
 gem 'whenever', :require => false
+gem "parse-ruby-client"
