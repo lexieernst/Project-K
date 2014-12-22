@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140904131731) do
+ActiveRecord::Schema.define(version: 20141119220243) do
 
   create_table "contact_relationships", force: true do |t|
     t.integer  "user_id"
@@ -38,12 +38,15 @@ ActiveRecord::Schema.define(version: 20140904131731) do
     t.float    "longitude_end"
     t.datetime "arrival_date"
     t.integer  "travel_time"
-    t.boolean  "complete",          default: false
+    t.boolean  "complete",               default: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.float    "latitude_current"
     t.float    "longitude_current"
     t.string   "slug"
+    t.string   "arrival_text"
+    t.string   "time_distance_text"
+    t.boolean  "sent_marketing_message", default: false, null: false
   end
 
   create_table "users", force: true do |t|
@@ -55,6 +58,7 @@ ActiveRecord::Schema.define(version: 20140904131731) do
     t.string   "name"
     t.string   "push_token"
     t.string   "gender"
+    t.string   "parse_object_id"
   end
 
   create_table "users_routes", id: false, force: true do |t|

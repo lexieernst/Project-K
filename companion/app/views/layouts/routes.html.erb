@@ -34,7 +34,7 @@
 			  	path.push(pt);
 			  }
 			  
-			  lastRouteStepIdx = route_steps.length-1;
+			  lastRouteStepIdx = route_steps.length-1; //current location
 			  
 			  // Zoom on user
 			  var location = new google.maps.LatLng(route_steps[route_steps.length-1].latitude,route_steps[route_steps.length-1].longitude);
@@ -44,7 +44,7 @@
 			  if(!data.complete) {
 				  setTimeout(reload, 1000);
 				}
-			});
+			}); //we want something similar in the html to stop refreshing after someone has ended their route
 		}
 	
 		function calcRoute(start, end) {

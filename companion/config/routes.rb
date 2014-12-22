@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   post 'users/push_token'
   get 'routes/watch/:slug', to: 'routes#slug'
   get 'routes/watching'
+
+  get '/dashboard' => 'dashboard#index'
   
   resources :users, only: [:update]
   resources :contacts, only: [:index, :create]  
