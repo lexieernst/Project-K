@@ -13,12 +13,21 @@
       }
     </style>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+
     <script>
+
+
+
+
 function initialize() {
-  var myLatlng = new google.maps.LatLng(42.284624, -83.741981);
+  <% @route.route_steps.each do |current_location| %>
+  <% current_lat = current_location.latitude_current %>
+  <% current_long = current_location.longitude_current %>
+  <% end %>
+  var currentLatlng = new google.maps.LatLng(current_lat, current_long);
   var mapOptions = {
     zoom: 10,
-    center: myLatlng
+    center: currentLatlng
   }
   var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
