@@ -1,4 +1,4 @@
-
+<!-- 
 <!DOCTYPE html>
 <html>
   <head>
@@ -18,17 +18,16 @@
 
 
 
+
 function initialize() {
   <% @all_routes.each do |current_location| %>
   <% current_lat = current_location.latitude_current %>
   <% current_long = current_location.longitude_current %>
-  // <%= print "hello world" %>
   <% end %>
-
   var currentLatlng = new google.maps.LatLng(current_lat, current_long);
   var mapOptions = {
-    zoom: 19,
-    center: myLatlng
+    zoom: 10,
+    center: currentLatlng
   }
   var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
@@ -46,4 +45,4 @@ google.maps.event.addDomListener(window, 'load', initialize);
   <body>
     <div id="map-canvas"></div>
   </body>
-</html>
+</html> -->

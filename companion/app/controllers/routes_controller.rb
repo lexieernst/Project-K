@@ -2,7 +2,15 @@ require 'twilio-ruby'
 
 class RoutesController < ApplicationController
   include TokenAuthentication
+
+  def initialize(routes)
+    @all_routes = Route.all
+  end
   
+  def index
+    @all_routes = Route.all
+  end
+
   def create
     # First check to see if the user has an existing - non complete - route
     @route = Route.where(user_id: @current_user.id, complete: false).first
